@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Free 60-second tag check for 1990s plush toys: find your hang-tag generation and see real sold prices for the famous ones. Not affiliated with Ty Inc.">
+<title>Plush Tag Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#fbf7f2; --card:#ffffff; --ink:#2a1f1d; --muted:#6e5f5a; --line:#eadfd6;
+  --red:#c7253e; --red-soft:#fbe6e8; --gold:#f2b705; --gold-soft:#fff4cc; --ok:#2f7d4f; --ok-soft:#e3f3e8;
+  --shadow:0 1px 2px rgba(60,30,20,.06),0 6px 24px rgba(60,30,20,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1514; --card:#251d1b; --ink:#f4ebe6; --muted:#b9a9a2; --line:#3a2e2b;
+  --red:#ff6b7d; --red-soft:#3a1d22; --gold:#ffcf3d; --gold-soft:#3a3115; --ok:#6fd39a; --ok-soft:#1c3326;
+  --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1514; --card:#251d1b; --ink:#f4ebe6; --muted:#b9a9a2; --line:#3a2e2b;
+  --red:#ff6b7d; --red-soft:#3a1d22; --gold:#ffcf3d; --gold-soft:#3a3115; --ok:#6fd39a; --ok-soft:#1c3326;
+  --shadow:none; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Work Sans",system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:800}
+h2{font-size:1.6rem;font-weight:800}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.hero{display:grid;gap:16px}
+.honest{background:var(--gold-soft);border-left:4px solid var(--gold);padding:12px 16px;border-radius:8px;max-width:62ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);display:grid;gap:18px}
+.step{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.opt{all:unset;cursor:pointer;border:2px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center;background:var(--bg)}
+.opt:hover,.opt:focus-visible{border-color:var(--red)}
+.opt svg{width:110px;height:90px}
+.opt b{font-weight:600}
+.opt span{font-size:.9rem;color:var(--muted)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{all:unset;cursor:pointer;background:var(--red);color:#fff;font-weight:600;padding:12px 20px;border-radius:999px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.verdict{border-radius:12px;padding:16px;display:grid;gap:8px}
+.verdict.low{background:var(--bg);border:1px solid var(--line)}
+.verdict.check{background:var(--ok-soft);border:1px solid var(--ok)}
+.verdict .era{font-family:Fraunces,Georgia,serif;font-size:1.4rem;font-weight:800}
+ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.price{font-variant-numeric:tabular-nums;white-space:nowrap}
+.offer{border:2px solid var(--red);background:var(--red-soft)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:6px}
+.plan .amt{font-family:Fraunces,Georgia,serif;font-size:2rem;font-weight:800}
+.small{font-size:.85rem;color:var(--muted)}
+.draft{font-size:.8rem;background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:999px;justify-self:start}
+footer{display:grid;gap:8px}
+a{color:var(--red)}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Is your old Beanie Baby worth anything?</h1>
+    <p class="lede">Check the paper heart tag in about 60 seconds. You'll get its era and an honest answer, based on what buyers actually paid on eBay, not what sellers are asking.</p>
+    <p class="honest"><strong>The honest part first:</strong> most Beanie Babies sell for a few dollars. Even the famous Princess bear usually sells for about $10. The real money is in a small number of early tags and specific versions, and this check tells you whether yours might be one.</p>
+  </header>
+
+  <section class="card" id="quiz" aria-live="polite"></section>
+
+  <section class="card">
+    <h2>The famous ones: what they really sold for</h2>
+    <p class="small">eBay sales from October 2023 to October 2026, as reported by a collector's sold-price study (source below). Only the best examples reach the top of these ranges.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Toy</th><th>What matters</th><th>Sold for</th></tr></thead>
+      <tbody>
+        <tr><td>Princess (purple bear)</td><td>Almost all are common. Some early versions earn a modest premium.</td><td class="price">usually ~$10; best in 3 yrs $850</td></tr>
+        <tr><td>Peanut, royal blue</td><td>The dark royal-blue colour, not the common light blue. Must be authenticated.</td><td class="price">$1,225–$2,400 (2026, mint)</td></tr>
+        <tr><td>Flash the dolphin</td><td>Original 1st-generation tags</td><td class="price">$450–$600; top $2,900</td></tr>
+        <tr><td>Brownie the bear</td><td>1st-generation tag naming "Brownie"</td><td class="price">$680–$1,750</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Things that do <em>not</em> make it valuable</h2>
+    <ul>
+      <li><strong>"1993" on the sewn tag.</strong> That's the design's copyright date, not when your toy was made.</li>
+      <li><strong>Spelling mistakes in the poem or tag.</strong> Late-1990s tag errors usually sell for the same few dollars.</li>
+      <li><strong>"Made in Indonesia" or "PVC pellets" by themselves.</strong> These help identify a version, but on their own they're common.</li>
+      <li><strong>Asking prices.</strong> Listings at $10,000 aren't sales. Only completed sales count.</li>
+    </ul>
+  </section>
+
+  <section class="card offer" id="offer">
+    <h2>Want a real number for <em>your</em> exact one?</h2>
+    <p>Send photos of the toy and both tags. Within 24 hours, a person looks up recent <strong>sold</strong> prices for your exact version (tag generation, condition), then tells you whether it's worth selling and where to sell it.</p>
+    <div class="plans">
+      <div class="plan"><span class="amt">$9</span><b>One toy</b><span class="small">Sold-price report by email</span></div>
+      <div class="plan"><span class="amt">$19</span><b>A box of up to 25</b><span class="small">For clearing out a collection: which ones to sell, which to donate</span></div>
+    </div>
+    <div class="row"><button class="btn" type="button" disabled title="Payment link not connected in this draft">Get my report (coming soon)</button>
+    <span class="small">Full refund if we can't find comparable sales.</span></div>
+  </section>
+
+  <footer class="small">
+    <p>Independent guide. Not affiliated with, endorsed by, or sponsored by Ty Inc. "Beanie Babies" is a trademark of Ty Inc.; it is used here only to describe the toys.</p>
+    <p>Sources: tag dates from <a href="https://www.tycollector.com/beanies/tags-beanie-regular-swing.htm" target="_blank" rel="noopener">Ty Collector</a>; sold prices from <a href="https://millennialdaydreams.com/blogs/explore/most-valuable-beanie-babies" target="_blank" rel="noopener">Millennial Daydreams' sold-price study</a>. Photos you send are deleted 30 days after your report.</p>
+  </footer>
+</div>
+
+<script>
+// Schematic tag drawings (our own, not Ty artwork)
+const heart = (o={}) => `<svg viewBox="0 0 120 100" aria-hidden="true">
+  ${o.book?'<path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3" transform="translate(-6,4)"/>':''}
+  <path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92 C76 72 106 56 104 32 C102 6 72 4 60 22Z" fill="var(--red)"/>
+  ${o.letters==='thin'?'<text x="60" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="400" fill="#fff" stroke="#fff" stroke-width=".3">Aa</text>':''}
+  ${o.letters==='puffy'?'<text x="60" y="58" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="26" font-weight="900" fill="#fff">Aa</text>':''}
+  ${o.star?'<path d="M92 62 l5 10 11 1 -8 7 3 11 -11 -6 -11 6 3 -11 -8 -7 11 -1z" fill="var(--gold)" stroke="#8a6a00" stroke-width="1"/>':''}
+  ${o.holo?'<g><circle cx="94" cy="76" r="11" fill="url(#hg)"/><defs><linearGradient id="hg"><stop offset="0" stop-color="#cfd8e3"/><stop offset=".5" stop-color="#f6e2ff"/><stop offset="1" stop-color="#bfe8ff"/></linearGradient></defs></g>':''}
+  ${o.none?'<path d="M30 20 L90 80 M90 20 L30 80" stroke="var(--muted)" stroke-width="5" stroke-linecap="round"/>':''}
+</svg>`;
+
+const Q = {
+  start:{q:'Is the paper heart tag still attached?',opts:[
+    {t:'Yes',s:'A red heart-shaped card on a plastic loop',d:{},go:'star'},
+    {t:'No, it\'s missing',s:'Only the sewn-in fabric tag is left',d:{none:1},go:'R_notag'}]},
+  star:{q:'What\'s on the front of the heart, besides the logo?',opts:[
+    {t:'Nothing else',s:'Just the logo',d:{letters:'puffy'},go:'book'},
+    {t:'A yellow star',s:'Says "Original Beanie Baby"',d:{star:1},go:'style'},
+    {t:'A shiny / holographic star, "2000", or several small stars',s:'Silver or rainbow sheen',d:{holo:1},go:'R_late'}]},
+  book:{q:'Does the heart open like a little book?',opts:[
+    {t:'No, it\'s one flat card',s:'Printed on both sides, doesn\'t open',d:{letters:'thin'},go:'R_g1'},
+    {t:'Yes, it opens',s:'There\'s writing inside',d:{book:1},go:'letters'}]},
+  letters:{q:'Look at the logo letters on the front. Are they thin or puffy?',opts:[
+    {t:'Thin',s:'Narrow, outlined letters',d:{book:1,letters:'thin'},go:'R_g2'},
+    {t:'Puffy',s:'Fat, rounded bubble letters',d:{book:1,letters:'puffy'},go:'R_g3'}]},
+  style:{q:'Open the heart. Next to the name, is there a 4-digit style number (like 4032)?',opts:[
+    {t:'Yes, there\'s a number',s:'Birthday written as numbers, e.g. 6-3-96',d:{star:1,book:1},go:'R_g4'},
+    {t:'No number',s:'Birthday written in words, e.g. "June 3, 1996"',d:{star:1,book:1},go:'R_g5'}]},
+};
+const R = {
+  R_g1:{kind:'check',era:'1st generation · 1993 to spring 1994',why:['The earliest tags of all, and the main place real money is found.','A 1st-gen Flash has sold for $450–$600 (top $2,900), and a 1st-gen Brownie for $680–$1,750.','Condition matters: a creased or torn tag cuts the price a lot.'],next:'Worth checking recent sold prices for your exact one.'},
+  R_g2:{kind:'check',era:'2nd generation · spring 1994 to spring 1995',why:['Early and much scarcer than later tags.','Many characters from this era still sell for modest amounts, but some early ones are worth real money.'],next:'Worth checking recent sold prices for your exact one.'},
+  R_g3:{kind:'check',era:'3rd generation · spring 1995 to spring 1996',why:['Older than most Beanie Babies around today.','Most 3rd-gen pieces are modest, but a few, like the royal-blue Peanut, have sold for $1,225–$2,400 in mint condition.'],next:'Worth a check if your character was retired early.'},
+  R_g4:{kind:'low',era:'4th generation · spring 1996 to late 1997',why:['The peak-craze era, when millions were made, so most sell for a few dollars.','There are exceptions: a handful of specific characters and versions sell for more.'],next:'Usually a few dollars. If yours is one of the famous names, a sold-price check is cheap insurance.'},
+  R_g5:{kind:'low',era:'5th generation · early 1998 to early 2000',why:['This includes most Princess bears, which usually sell for about $10.','Tag spelling mistakes from this era don\'t add value.'],next:'Most likely a few dollars, but fine to sell as a lot or to donate.'},
+  R_late:{kind:'low',era:'6th generation or later · 2000 onwards',why:['Made in very large numbers after the craze peaked.','These almost always sell for a few dollars.'],next:'Most likely a few dollars. Best sold as a bundle.'},
+  R_notag:{kind:'low',era:'Tag missing',why:['Without the heart tag, collectors pay much less, often half or less.','The sewn-in tag can still help date it, but rarely changes the answer.'],next:'Usually a few dollars, unless it\'s a known rarity like the royal-blue Peanut.'},
+};
+
+const box = document.getElementById('quiz');
+let n = 1;
+function show(id){
+  if (R[id]) return result(R[id]);
+  const s = Q[id];
+  box.innerHTML = `<span class="step">Step ${n} · Tag check</span><h2>${s.q}</h2>
+    <div class="opts">${s.opts.map((o,i)=>`<button class="opt" type="button" data-i="${i}">${heart(o.d)}<b>${o.t}</b><span>${o.s}</span></button>`).join('')}</div>`;
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{n++;show(s.opts[+b.dataset.i].go)});
+}
+function result(r){
+  box.innerHTML = `<span class="step">Your result</span>
+    <div class="verdict ${r.kind}"><span class="era">${r.era}</span>
+      <ul>${r.why.map(w=>`<li>${w}</li>`).join('')}</ul>
+      <p><strong>${r.next}</strong></p></div>
+    <div class="row"><a class="btn" href="#offer">Get a sold-price report</a><button class="btn ghost" type="button" id="again">Check another</button></div>`;
+  document.getElementById('again').onclick=()=>{n=1;show('start')};
+}
+show('start');
+</script>
+
+</body>
+</html>
