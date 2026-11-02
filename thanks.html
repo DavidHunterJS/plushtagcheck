@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Order received: how to send your photos.">
+<title>Thank you · Plush Tag Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#fbf7f2; --card:#ffffff; --ink:#2a1f1d; --muted:#6e5f5a; --line:#eadfd6;
+  --red:#c7253e; --red-soft:#fbe6e8; --gold:#f2b705; --gold-soft:#fff4cc; --ok:#2f7d4f; --ok-soft:#e3f3e8;
+  --shadow:0 1px 2px rgba(60,30,20,.06),0 6px 24px rgba(60,30,20,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1514; --card:#251d1b; --ink:#f4ebe6; --muted:#b9a9a2; --line:#3a2e2b;
+  --red:#ff6b7d; --red-soft:#3a1d22; --gold:#ffcf3d; --gold-soft:#3a3115; --ok:#6fd39a; --ok-soft:#1c3326;
+  --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1514; --card:#251d1b; --ink:#f4ebe6; --muted:#b9a9a2; --line:#3a2e2b;
+  --red:#ff6b7d; --red-soft:#3a1d22; --gold:#ffcf3d; --gold-soft:#3a3115; --ok:#6fd39a; --ok-soft:#1c3326;
+  --shadow:none; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Work Sans",system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:800}
+h2{font-size:1.6rem;font-weight:800}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.hero{display:grid;gap:16px}
+.honest{background:var(--gold-soft);border-left:4px solid var(--gold);padding:12px 16px;border-radius:8px;max-width:62ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);display:grid;gap:18px}
+.step{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.opt{all:unset;cursor:pointer;border:2px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center;background:var(--bg)}
+.opt:hover,.opt:focus-visible{border-color:var(--red)}
+.opt svg{width:110px;height:90px}
+.opt b{font-weight:600}
+.opt span{font-size:.9rem;color:var(--muted)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{all:unset;cursor:pointer;background:var(--red);color:#fff;font-weight:600;padding:12px 20px;border-radius:999px}
+a.btn{text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.verdict{border-radius:12px;padding:16px;display:grid;gap:8px}
+.verdict.low{background:var(--bg);border:1px solid var(--line)}
+.verdict.check{background:var(--ok-soft);border:1px solid var(--ok)}
+.verdict .era{font-family:Fraunces,Georgia,serif;font-size:1.4rem;font-weight:800}
+ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.price{font-variant-numeric:tabular-nums;white-space:nowrap}
+.offer{border:2px solid var(--red);background:var(--red-soft)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:6px}
+.plan .amt{font-family:Fraunces,Georgia,serif;font-size:2rem;font-weight:800}
+.small{font-size:.85rem;color:var(--muted)}
+.draft{font-size:.8rem;background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:999px;justify-self:start}
+footer{display:grid;gap:8px}
+a{color:var(--red)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero"><h1>Thank you, your order is in</h1>
+    <p class="lede" id="plan-line">Next, send us your photos so we can start.</p></header>
+  <section class="card">
+    <h2>Send your photos</h2>
+    <p>Email <strong>orders@plushtagcheck.com</strong> with:</p>
+    <ul>
+      <li>A photo of the front of each toy.</li>
+      <li>Both sides of the paper heart tag (the swing tag), and both sides of the sewn-in fabric tag.</li>
+      <li>Your Stripe receipt number, or the email address you paid with.</li>
+    </ul>
+    <p>Clear daylight photos work best. For a box of up to 25, you can send them over several emails.</p>
+    <p>We'll email your report within <strong>48 hours</strong> of receiving the photos. If we can't identify a toy or find comparable sales, we'll refund it in full.</p>
+  </section>
+<script>
+(function(){var p=new URLSearchParams(location.search).get('plan');var t={single:'You ordered a report for one toy ($9).',box:'You ordered a report for up to 25 toys ($19).'}[p];if(t)document.getElementById('plan-line').textContent=t+' Next, send us your photos so we can start.';})();
+</script>
+  <footer class="small"><p><a href="/">Plush Tag Check</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · orders@plushtagcheck.com</p>
+  <p>Independent guide. Not affiliated with, endorsed by, or sponsored by Ty Inc.</p></footer>
+</div>
+</body>
+</html>
