@@ -62,6 +62,8 @@ th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut
 footer{display:grid;gap:8px}
 a{color:var(--red)}
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P544XY2T5C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P544XY2T5C');</script>
 </head>
 <body>
 <div class="wrap">
@@ -79,7 +81,10 @@ a{color:var(--red)}
     <p>We'll email your report within <strong>48 hours</strong> of receiving the photos. If we can't identify a toy or find comparable sales, we'll refund it in full.</p>
   </section>
 <script>
-(function(){var p=new URLSearchParams(location.search).get('plan');var t={single:'You ordered a report for one toy ($9).',box:'You ordered a report for up to 25 toys ($19).'}[p];if(t)document.getElementById('plan-line').textContent=t+' Next, send us your photos so we can start.';})();
+(function(){var p=new URLSearchParams(location.search).get('plan');var t={single:'You ordered a report for one toy ($9).',box:'You ordered a report for up to 25 toys ($19).'}[p];if(t)document.getElementById('plan-line').textContent=t+' Next, send us your photos so we can start.';
+var sid=new URLSearchParams(location.search).get('session');var key='ptc_purchase_'+sid;var seen=false;try{seen=!!localStorage.getItem(key);}catch(e){}
+if(t&&sid&&sid.indexOf('cs_')===0&&!seen){var v=p==='box'?19:9;gtag('event','purchase',{transaction_id:sid,value:v,currency:'USD',items:[{item_id:p,item_name:p==='box'?'Box report':'Single toy report',price:v,quantity:1}]});try{localStorage.setItem(key,'1');}catch(e){}}
+})();
 </script>
   <footer class="small"><p><a href="/">Plush Tag Check</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · orders@plushtagcheck.com</p>
   <p>Independent guide. Not affiliated with, endorsed by, or sponsored by Ty Inc.</p></footer>

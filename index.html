@@ -62,6 +62,8 @@ th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut
 footer{display:grid;gap:8px}
 a{color:var(--red)}
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P544XY2T5C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P544XY2T5C');</script>
 </head>
 <body>
 
@@ -160,11 +162,11 @@ const R = {
 const box = document.getElementById('quiz');
 let n = 1;
 function show(id){
-  if (R[id]) return result(R[id]);
+  if (R[id]) { gtag('event','quiz_finish',{result:id,verdict:R[id].kind}); return result(R[id]); }
   const s = Q[id];
   box.innerHTML = `<span class="step">Step ${n} · Tag check</span><h2>${s.q}</h2>
     <div class="opts">${s.opts.map((o,i)=>`<button class="opt" type="button" data-i="${i}">${heart(o.d)}<b>${o.t}</b><span>${o.s}</span></button>`).join('')}</div>`;
-  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{n++;show(s.opts[+b.dataset.i].go)});
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(id==='start')gtag('event','quiz_start');n++;show(s.opts[+b.dataset.i].go)});
 }
 function result(r){
   box.innerHTML = `<span class="step">Your result</span>
@@ -175,6 +177,7 @@ function result(r){
   document.getElementById('again').onclick=()=>{n=1;show('start')};
 }
 show('start');
+document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(a=>a.addEventListener('click',()=>gtag('event','buy_click',{plan:a.href.includes('fZu7sL9W')?'box':'single'})));
 </script>
 
 </body>
