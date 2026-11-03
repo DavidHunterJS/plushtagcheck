@@ -2,73 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c69c6d">
 <meta name="description" content="How Plush Tag Check handles your photos and details.">
 <title>Privacy · Plush Tag Check</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Permanent+Marker&display=swap">
 <style>
-:root{
-  --bg:#fbf7f2; --card:#ffffff; --ink:#2a1f1d; --muted:#6e5f5a; --line:#eadfd6;
-  --red:#c7253e; --red-soft:#fbe6e8; --gold:#f2b705; --gold-soft:#fff4cc; --ok:#2f7d4f; --ok-soft:#e3f3e8;
-  --shadow:0 1px 2px rgba(60,30,20,.06),0 6px 24px rgba(60,30,20,.06);
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1b1514; --card:#251d1b; --ink:#f4ebe6; --muted:#b9a9a2; --line:#3a2e2b;
-  --red:#ff6b7d; --red-soft:#3a1d22; --gold:#ffcf3d; --gold-soft:#3a3115; --ok:#6fd39a; --ok-soft:#1c3326;
-  --shadow:none; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1b1514; --card:#251d1b; --ink:#f4ebe6; --muted:#b9a9a2; --line:#3a2e2b;
-  --red:#ff6b7d; --red-soft:#3a1d22; --gold:#ffcf3d; --gold-soft:#3a3115; --ok:#6fd39a; --ok-soft:#1c3326;
-  --shadow:none; color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Work Sans",system-ui,sans-serif}
-.wrap{max-width:760px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;text-wrap:balance;margin:0}
-h1{font-size:clamp(2rem,6vw,3rem);font-weight:800}
-h2{font-size:1.6rem;font-weight:800}
-h3{font-size:1.15rem;font-weight:600}
-p{margin:0}
-.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
-.hero{display:grid;gap:16px}
-.honest{background:var(--gold-soft);border-left:4px solid var(--gold);padding:12px 16px;border-radius:8px;max-width:62ch}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);display:grid;gap:18px}
-.step{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.opt{all:unset;cursor:pointer;border:2px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center;background:var(--bg)}
-.opt:hover,.opt:focus-visible{border-color:var(--red)}
-.opt svg{width:110px;height:90px}
-.opt b{font-weight:600}
-.opt span{font-size:.9rem;color:var(--muted)}
-.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.btn{all:unset;cursor:pointer;background:var(--red);color:#fff;font-weight:600;padding:12px 20px;border-radius:999px}
-a.btn{text-decoration:none}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.verdict{border-radius:12px;padding:16px;display:grid;gap:8px}
-.verdict.low{background:var(--bg);border:1px solid var(--line)}
-.verdict.check{background:var(--ok-soft);border:1px solid var(--ok)}
-.verdict .era{font-family:Fraunces,Georgia,serif;font-size:1.4rem;font-weight:800}
-ul{margin:0;padding-left:20px;display:grid;gap:6px}
-.table-wrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.price{font-variant-numeric:tabular-nums;white-space:nowrap}
-.offer{border:2px solid var(--red);background:var(--red-soft)}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.plan{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:6px}
-.plan .amt{font-family:Fraunces,Georgia,serif;font-size:2rem;font-weight:800}
-.small{font-size:.85rem;color:var(--muted)}
-.draft{font-size:.8rem;background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:999px;justify-self:start}
-footer{display:grid;gap:8px}
-a{color:var(--red)}
+:root{--kraft:#c69c6d;--kraft-dark:#7d5a36;--paper:#fffdf8;--line:#e7dfd2;--ink:#2b2118;--ink-soft:#4a3523;--ink-quiet:#6b5a4a;--tape:#efe2b4;--orange:#ff6a13;--yellow:#ffe14a;
+--shadow:0 1px 1px rgba(60,35,10,.18),0 8px 18px -6px rgba(60,35,10,.35);color-scheme:light}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--kraft);color:var(--ink);font:400 1.0625rem/1.6 Archivo,system-ui,sans-serif}
+::selection{background:var(--yellow);color:var(--ink)}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:46rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{padding-block:max(14px,env(safe-area-inset-top,0px)) 0}
+.brand{display:inline-block;font:400 1.05rem/1 "Permanent Marker",cursive;text-decoration:none;background:var(--tape);padding:.45em .9em;transform:rotate(-2deg);box-shadow:0 1px 2px rgba(60,35,10,.2);clip-path:polygon(2% 6%,98% 0,100% 92%,97% 100%,1% 96%,0 10%)}
+.hero{display:grid;gap:10px;padding-block:28px 34px}
+h1,h2{font-family:Archivo,system-ui,sans-serif;text-wrap:balance;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,10vw,4rem);line-height:.95;font-weight:900;font-variation-settings:"wdth" 116}
+.lede{font-size:1.15rem;margin:0;max-width:36ch;color:var(--ink-soft)}
+.small{font-size:.92rem;margin:0;color:var(--ink-soft)}
+.sheet{position:relative;background:var(--paper);border-radius:3px;box-shadow:var(--shadow);padding:32px 20px 26px;display:grid;gap:14px}
+.sheet::before,.sheet::after{content:"";position:absolute;top:-11px;width:84px;height:24px;background:var(--tape);opacity:.9;box-shadow:0 1px 2px rgba(60,35,10,.18)}
+.sheet::before{left:14px;transform:rotate(-5deg)}
+.sheet::after{right:14px;transform:rotate(4deg)}
+.sheet h2{font-size:1.35rem;line-height:1.15;font-weight:850;font-variation-settings:"wdth" 108;margin-top:14px}
+.sheet h2:first-child{margin-top:0}
+.sheet p{margin:0;max-width:62ch}
+.sheet ul{margin:0;padding-left:1.15em;display:grid;gap:8px;max-width:62ch}
+footer{margin-top:48px;background:var(--kraft-dark);color:#f6ead9;padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));font-size:.92rem}
+footer .wrap{display:grid;gap:10px}
+footer p{margin:0}
+footer a{color:#fff}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px}
+@media (min-width:760px){.sheet{padding:36px 34px 32px;transform:rotate(-.3deg)}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P544XY2T5C"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P544XY2T5C');</script>
 </head>
 <body>
-<div class="wrap">
+<header class="wrap top"><a class="brand" href="/">Plush Tag Check</a></header>
+<main class="wrap">
   <header class="hero"><h1>Privacy</h1><p class="small">Last updated November 3, 2026</p></header>
-  <section class="card">
+  <div class="sheet">
     <h2>What we collect</h2>
     <ul>
       <li><strong>Payments:</strong> handled by Stripe. We see your name, email and the amount, but never your full card number.</li>
@@ -84,9 +64,13 @@ a{color:var(--red)}
     </ul>
     <h2>Contact</h2>
     <p>To have your photos or emails deleted sooner, write to orders@plushtagcheck.com.</p>
-  </section>
-  <footer class="small"><p><a href="/">Plush Tag Check</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · orders@plushtagcheck.com</p>
-  <p>Independent guide. Not affiliated with, endorsed by, or sponsored by Ty Inc.</p></footer>
-</div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p class="links"><a href="/">Plush Tag Check</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><span>orders@plushtagcheck.com</span></p>
+    <p>Independent guide. Not affiliated with, endorsed by, or sponsored by Ty Inc.</p>
+  </div>
+</footer>
 </body>
 </html>
