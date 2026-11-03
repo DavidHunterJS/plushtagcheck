@@ -3,52 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#c69c6d">
+<meta name="theme-color" content="#c8102e">
 <meta name="description" content="Order received: how to send your photos.">
 <title>Thank you · Plush Tag Check</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800;900&display=swap">
 <style>
-:root{--kraft:#c69c6d;--kraft-dark:#7d5a36;--paper:#fffdf8;--line:#e7dfd2;--ink:#2b2118;--ink-soft:#4a3523;--ink-quiet:#6b5a4a;--tape:#efe2b4;--orange:#ff6a13;--yellow:#ffe14a;
---shadow:0 1px 1px rgba(60,35,10,.18),0 8px 18px -6px rgba(60,35,10,.35);color-scheme:light}
+:root{--red:#c8102e;--on-red:#ffffff;--on-red-soft:#ffe1e6;--bg:#ffffff;--fg:#111111;--muted:#4d4d4d;--row:#f4f4f4;--line:#e5e5e5;--r-card:20px;color-scheme:light}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--kraft);color:var(--ink);font:400 1.0625rem/1.6 Archivo,system-ui,sans-serif}
-::selection{background:var(--yellow);color:var(--ink)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 "Schibsted Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:var(--on-red)}
 a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:3px solid var(--fg);outline-offset:3px;border-radius:6px}
 .wrap{max-width:46rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.top{padding-block:max(14px,env(safe-area-inset-top,0px)) 0}
-.brand{display:inline-block;font:400 1.05rem/1 "Permanent Marker",cursive;text-decoration:none;background:var(--tape);padding:.45em .9em;transform:rotate(-2deg);box-shadow:0 1px 2px rgba(60,35,10,.2);clip-path:polygon(2% 6%,98% 0,100% 92%,97% 100%,1% 96%,0 10%)}
-.hero{display:grid;gap:10px;padding-block:28px 34px}
-h1,h2{font-family:Archivo,system-ui,sans-serif;text-wrap:balance;margin:0;letter-spacing:-.02em}
-h1{font-size:clamp(2.4rem,10vw,4rem);line-height:.95;font-weight:900;font-variation-settings:"wdth" 116}
-.lede{font-size:1.15rem;margin:0;max-width:36ch;color:var(--ink-soft)}
-.small{font-size:.92rem;margin:0;color:var(--ink-soft)}
-.sheet{position:relative;background:var(--paper);border-radius:3px;box-shadow:var(--shadow);padding:32px 20px 26px;display:grid;gap:14px}
-.sheet::before,.sheet::after{content:"";position:absolute;top:-11px;width:84px;height:24px;background:var(--tape);opacity:.9;box-shadow:0 1px 2px rgba(60,35,10,.18)}
-.sheet::before{left:14px;transform:rotate(-5deg)}
-.sheet::after{right:14px;transform:rotate(4deg)}
-.sheet h2{font-size:1.35rem;line-height:1.15;font-weight:850;font-variation-settings:"wdth" 108;margin-top:14px}
+.redtop{background:var(--red);color:var(--on-red)}
+.redtop :focus-visible{outline-color:var(--on-red)}
+.top{padding-block:max(16px,env(safe-area-inset-top,0px)) 0}
+.brand{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:1.05rem}
+.brand svg{width:22px;height:19px}
+.hero{display:grid;gap:10px;padding-block:28px 40px}
+h1,h2{margin:0;text-wrap:balance;letter-spacing:-.03em}
+h1{font-size:clamp(2.4rem,10vw,4rem);line-height:.95;font-weight:900}
+.lede{font-size:1.15rem;margin:0;max-width:38ch;color:var(--on-red-soft)}
+.small{font-size:.95rem;margin:0;color:var(--on-red-soft)}
+.sheet{padding-block:36px 8px;display:grid;gap:14px}
+.sheet h2{font-size:1.4rem;line-height:1.15;font-weight:800;margin-top:18px}
 .sheet h2:first-child{margin-top:0}
 .sheet p{margin:0;max-width:62ch}
 .sheet ul{margin:0;padding-left:1.15em;display:grid;gap:8px;max-width:62ch}
-footer{margin-top:48px;background:var(--kraft-dark);color:#f6ead9;padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));font-size:.92rem}
+footer{margin-top:48px;border-top:1px solid var(--line);color:var(--muted);padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));font-size:.92rem}
 footer .wrap{display:grid;gap:10px}
 footer p{margin:0}
-footer a{color:#fff}
 .links{display:flex;flex-wrap:wrap;gap:6px 18px}
-@media (min-width:760px){.sheet{padding:36px 34px 32px;transform:rotate(-.3deg)}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P544XY2T5C"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P544XY2T5C');</script>
 </head>
 <body>
-<header class="wrap top"><a class="brand" href="/">Plush Tag Check</a></header>
-<main class="wrap">
+<div class="redtop">
+<header class="wrap top"><a class="brand" href="/"><svg viewBox="0 0 120 100" aria-hidden="true"><path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92 C76 72 106 56 104 32 C102 6 72 4 60 22Z" fill="#ffffff"/></svg>Plush Tag Check</a></header>
+<div class="wrap">
   <header class="hero"><h1>Thank you, your order is in</h1>
     <p class="lede" id="plan-line">Next, send us your photos so we can start.</p></header>
+</div>
+</div>
+<main class="wrap">
   <div class="sheet">
     <h2>Send your photos</h2>
     <p>Email <strong>orders@plushtagcheck.com</strong> with:</p>

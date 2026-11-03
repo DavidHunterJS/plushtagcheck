@@ -5,209 +5,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Plush Tag Check</title>
 <meta name="description" content="Free 60-second tag check for 1990s plush toys: find your hang-tag generation and see real sold prices for the famous ones. Not affiliated with Ty Inc.">
-<meta name="theme-color" content="#c69c6d">
+<meta name="theme-color" content="#c8102e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800;900&display=swap">
 <style>
+/* One accent (tag red). Radius scale: actions = pill, cards 20px, inner rows 12px. */
 :root{
-  --kraft:#c69c6d; --kraft-deep:#a97f52; --kraft-dark:#7d5a36;
-  --paper:#fffdf8; --line:#e7dfd2;
-  --ink:#2b2118; --ink-soft:#4a3523; --ink-quiet:#6b5a4a;
-  --tape:#efe2b4;
-  --orange:#ff6a13; --pink:#ff3d8b; --green:#3ddc68; --yellow:#ffe14a;
-  --shadow:0 1px 1px rgba(60,35,10,.18),0 8px 18px -6px rgba(60,35,10,.35);
+  --red:#c8102e; --red-dark:#a30d25; --on-red:#ffffff; --on-red-soft:#ffe1e6;
+  --bg:#ffffff; --fg:#111111; --muted:#4d4d4d; --quiet:#5c5c5c;
+  --row:#f4f4f4; --row-hover:#ececec; --line:#e5e5e5;
+  --ink-band:#111111; --ink-card:#1e1e1e; --on-ink:#ffffff; --on-ink-soft:#d4d4d4;
+  --r-card:20px; --r-row:12px;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--kraft);color:var(--ink);font:400 1.0625rem/1.55 Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100}
-::selection{background:var(--yellow);color:var(--ink)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.55 "Schibsted Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:var(--on-red)}
 a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
-img,svg{max-width:100%}
-
+:focus-visible{outline:3px solid var(--fg);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{margin:0;text-wrap:balance;letter-spacing:-.03em}
+p{margin:0}
 
-/* masking tape */
-.tape{display:inline-block;background:var(--tape);padding:.3em .8em;box-shadow:0 1px 2px rgba(60,35,10,.2);
-  clip-path:polygon(2% 6%,98% 0,100% 92%,97% 100%,1% 96%,0 10%)}
-
-/* top */
-.top{padding-block:max(14px,env(safe-area-inset-top,0px)) 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font:400 1.05rem/1 "Permanent Marker",cursive;text-decoration:none;transform:rotate(-2deg);padding:.45em .9em}
-.top nav{font-size:.95rem;display:flex;gap:16px}
-.top nav a{text-decoration:none;font-weight:650}
-.brand,.top nav a{white-space:nowrap}
-@media (max-width:359px){.top nav a[href="#sold"]{display:none}}
+/* red top */
+.redtop{background:linear-gradient(var(--red) calc(100% - 96px),var(--bg) 0);color:var(--on-red)}
+.top :focus-visible,.hero-copy :focus-visible{outline-color:var(--on-red)}
+.top{padding-block:max(16px,env(safe-area-inset-top,0px)) 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:1.05rem;white-space:nowrap}
+.brand svg{width:22px;height:19px}
+.top nav{display:flex;gap:18px;font-weight:700}
+.top nav a{text-decoration:none;white-space:nowrap}
 .top nav a:hover{text-decoration:underline}
+.hero{display:grid;gap:24px;padding-block:28px 0}
+.hero-copy{display:grid;gap:14px}
+h1{font-size:clamp(2.75rem,12vw,5.2rem);line-height:.94;font-weight:900}
+.promise{font-size:1.15rem;line-height:1.45;color:var(--on-red-soft);max-width:34ch}
+.promise strong{color:var(--on-red);font-weight:700;white-space:nowrap}
 
-/* hero */
-.hero{display:grid;gap:22px;padding-block:22px 40px;align-items:start}
-h1,h2,h3{font-family:Archivo,system-ui,sans-serif;text-wrap:balance;margin:0;letter-spacing:-.02em}
-h1{font-size:clamp(2.75rem,11.5vw,5.4rem);line-height:.92;font-weight:900;font-variation-settings:"wdth" 118}
-.promise{font-size:1.15rem;line-height:1.45;max-width:34ch;color:var(--ink-soft);margin:0}
-.promise strong{color:var(--ink);white-space:nowrap}
-
-/* paper sheet */
-.sheet{position:relative;background:var(--paper);border-radius:3px;box-shadow:var(--shadow);padding:30px 18px 22px}
-.sheet::before,.sheet::after{content:"";position:absolute;top:-11px;width:84px;height:24px;background:var(--tape);opacity:.9;box-shadow:0 1px 2px rgba(60,35,10,.18)}
-.sheet::before{left:14px;transform:rotate(-5deg)}
-.sheet::after{right:14px;transform:rotate(4deg)}
-
-/* quiz */
-.quiz{display:grid;gap:16px;align-content:start}
-.dots{position:absolute;top:14px;right:16px;display:flex;gap:6px}
-.dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
-.dots i.on{background:var(--orange)}
-.q{font-size:1.45rem;line-height:1.15;font-weight:800;font-variation-settings:"wdth" 108;padding-right:72px}
-.q:focus{outline:none}
+/* quiz card */
+.card{color:var(--fg);background:var(--bg);border-radius:var(--r-card);padding:20px 16px 18px;box-shadow:0 14px 34px -14px rgba(90,0,12,.38),0 2px 6px rgba(0,0,0,.06)}
+.prog{display:flex;gap:6px;margin-bottom:16px}
+.prog i{height:4px;flex:1;border-radius:2px;background:var(--line);transition:background .25s}
+.prog i.on{background:var(--red)}
+.quiz{display:grid;gap:12px}
+.q{font-size:1.4rem;line-height:1.15;font-weight:800}
+.q:focus,.era:focus{outline:none}
 .opts{display:grid;gap:10px}
-.opt{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:76px 1fr;align-items:center;gap:14px;min-height:84px;padding:10px 14px 10px 8px;border-radius:12px;background:#f6f1e7;transition:background .15s, transform .15s}
-.opt:hover{background:#efe6d5}
-.opt:active{transform:scale(.985)}
-.opt:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.opt svg{width:76px;height:64px}
+.opt{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:64px minmax(0,1fr);align-items:center;gap:14px;min-height:76px;padding:10px 14px 10px 10px;border-radius:var(--r-row);background:var(--row);transition:background .12s,transform .12s}
+.opt:hover{background:var(--row-hover)}
+.opt:active{transform:scale(.98)}
+.opt:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+.opt svg{width:64px;height:54px}
 .opt b{display:block;font-weight:700;font-size:1.05rem;line-height:1.25}
-.opt span span{display:block;font-size:.92rem;color:var(--ink-quiet);line-height:1.35;margin-top:2px}
-.back{all:unset;cursor:pointer;font-size:.95rem;font-weight:650;justify-self:start;text-decoration:underline;text-underline-offset:.18em;padding:6px 2px}
-.back:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.opt span span{display:block;font-size:.93rem;color:var(--quiet);line-height:1.35;margin-top:2px}
+.back{all:unset;cursor:pointer;justify-self:start;font-weight:700;font-size:.95rem;text-decoration:underline;text-underline-offset:.18em;padding:6px 2px}
+.back:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
 
-/* result + sticker */
+/* result */
 .result{display:grid;gap:14px}
-.res-head{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
-.era{font-size:1.5rem;line-height:1.1;font-weight:850;font-variation-settings:"wdth" 108}
-.era:focus{outline:none}
-.when{display:block;font-size:1rem;font-weight:500;color:var(--ink-quiet);margin-top:6px;font-variation-settings:"wdth" 100;letter-spacing:0}
-.sticker{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;text-align:center;font:400 1.1rem/1.02 "Permanent Marker",cursive;color:var(--ink);padding:14px;
-  box-shadow:inset 0 -3px 0 rgba(0,0,0,.08),0 2px 3px rgba(60,35,10,.25);transform:rotate(-8deg);margin-top:-6px}
-.sticker.check{background:var(--orange)}
-.sticker.low{background:var(--green)}
-.slap{animation:slap .42s cubic-bezier(.16,1,.3,1) both}
-@keyframes slap{0%{transform:scale(1.7) rotate(-24deg);opacity:0;box-shadow:0 18px 26px rgba(60,35,10,.3)}60%{opacity:1}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+.res-head{display:grid;gap:10px;justify-items:start}
+.badge{display:inline-flex;align-items:center;min-height:32px;padding:0 14px;border-radius:999px;font-weight:800;font-size:.95rem}
+.badge.check{background:var(--red);color:var(--on-red)}
+.badge.low{background:var(--fg);color:var(--bg)}
+.pop{animation:pop .32s cubic-bezier(.23,1,.32,1) both}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+.era{font-size:1.6rem;line-height:1.08;font-weight:900}
+.when{display:block;font-size:1rem;font-weight:500;color:var(--quiet);margin-top:6px;letter-spacing:0}
 .result ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
-.next{font-weight:700;margin:0}
-.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.btn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;text-align:center}
-.btn:hover{background:#000}
-.btn:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.btn.plain{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
-.btn.plain:hover{background:rgba(43,33,24,.06)}
-
-/* honest strip */
-.honest{padding-block:8px 46px}
-.honest .tape{display:block;max-width:40rem;padding:16px 20px;font-size:1.05rem;line-height:1.5;transform:rotate(-.6deg);clip-path:polygon(0 3%,100% 0,99.4% 97%,0.5% 100%);margin:0}
-.honest strong{font-weight:800}
+.next{font-weight:700}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:var(--red);color:var(--on-red);font-weight:700;text-align:center;transition:background .12s,transform .12s}
+.btn:hover{background:var(--red-dark)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.btn.plain{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px var(--fg)}
+.btn.plain:hover{background:var(--row)}
 
 /* sections */
-section.band{padding-block:46px}
-section.band > .wrap{display:grid;gap:22px}
-h2{font-size:clamp(2rem,8vw,3.2rem);line-height:.98;font-weight:900;font-variation-settings:"wdth" 116}
-.sub{margin:0;max-width:44ch;color:var(--ink-soft)}
-.intro{display:grid;gap:14px;align-content:start}
+section{padding-block:52px}
+section > .wrap{display:grid;gap:20px}
+h2.big{font-size:clamp(2.1rem,8.5vw,3.4rem);line-height:.98;font-weight:900}
+.sub{color:var(--muted);max-width:46ch}
+.honest{padding-block:40px 0}
+.note{background:var(--row);border-radius:var(--r-card);padding:20px;max-width:44rem;font-size:1.05rem;line-height:1.5}
+.note strong{font-weight:800}
 
-/* sold list */
 .sold{list-style:none;margin:0;padding:0;display:grid}
-.sold li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:16px 2px;border-bottom:1px solid var(--line);align-items:center}
-.sold li:first-child{padding-top:4px}
-.sold li:last-child{border-bottom:0;padding-bottom:4px}
-.sold .name{font-weight:800;font-size:1.1rem;line-height:1.2;font-variation-settings:"wdth" 106}
-.sold .why{grid-column:1;font-size:.95rem;color:var(--ink-quiet);line-height:1.4}
-.sold .price{grid-row:1 / span 2;grid-column:2;justify-self:end;text-align:center;font:400 1rem/1.05 "Permanent Marker",cursive;padding:12px 12px;border-radius:999px;min-width:100px;transform:rotate(3deg);font-variant-numeric:tabular-nums}
-.sold li:nth-child(1) .price{background:var(--yellow)}
-.sold li:nth-child(2) .price{background:var(--pink)}
-.sold li:nth-child(3) .price{background:var(--orange)}
-.sold li:nth-child(4) .price{background:var(--green)}
-.sold .price small{display:block;font:600 .72rem/1.2 Archivo,sans-serif;margin-top:4px}
-.source{font-size:.9rem;color:var(--ink-soft);margin:0}
+.sold li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.sold .name{font-weight:800;font-size:1.1rem;line-height:1.2}
+.sold .why{grid-column:1;font-size:.95rem;color:var(--quiet);line-height:1.4}
+.sold .price{grid-row:1 / span 2;grid-column:2;text-align:right;font-weight:900;font-size:1.15rem;color:var(--red);white-space:nowrap}
+.sold .price small{display:block;font-weight:500;font-size:.8rem;color:var(--quiet)}
+.source{font-size:.9rem;color:var(--muted)}
 
-/* myths */
-.myths{list-style:none;margin:0;padding:0;display:grid;gap:24px}
-.myths li{display:grid;gap:6px;max-width:40rem}
-.myth{font-weight:900;font-size:1.35rem;line-height:1.2;font-variation-settings:"wdth" 110;justify-self:start;text-decoration:line-through;text-decoration-thickness:.17em;text-decoration-color:rgba(43,33,24,.82);text-decoration-skip-ink:none}
-.myths p{margin:0;color:var(--ink-soft);max-width:44ch}
+.myths{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.myths li{display:grid;gap:4px}
+.myth{font-weight:800;font-size:1.25rem;line-height:1.2;justify-self:start;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:.12em;text-decoration-skip-ink:none}
+.myths p{color:var(--muted);max-width:46ch}
 
-/* offer */
-.offer{background:var(--kraft-deep)}
-.plans{display:grid;gap:14px}
-a.plan{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;align-items:center;text-decoration:none;background:var(--paper);border-radius:14px;padding:18px;box-shadow:var(--shadow);transition:transform .15s}
-a.plan:hover{transform:translateY(-2px)}
-a.plan:hover .go{background:#000}
-a.plan:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.plan .dot{grid-row:1 / span 3;width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font:400 2rem/1 "Permanent Marker",cursive;transform:rotate(-6deg);box-shadow:inset 0 -3px 0 rgba(0,0,0,.08)}
-.plan:nth-child(1) .dot{background:var(--orange)}
-.plan:nth-child(2) .dot{background:var(--pink)}
-.plan .what{font-weight:850;font-size:1.2rem;line-height:1.15;font-variation-settings:"wdth" 108}
-.plan .detail{font-size:.95rem;color:var(--ink-quiet);line-height:1.4}
-.plan .go{justify-self:start;margin-top:6px;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;font-size:.95rem}
-.fine{font-size:.95rem;color:var(--ink);margin:0;max-width:44ch}
+.offer{background:var(--ink-band);color:var(--on-ink)}
+.offer .sub{color:var(--on-ink-soft)}
+.offer :focus-visible{outline-color:var(--on-ink)}
+.plans{display:grid;gap:12px}
+a.plan{display:grid;gap:4px;text-decoration:none;background:var(--ink-card);border-radius:var(--r-card);padding:20px}
+.plan .amt{font-size:2.6rem;line-height:1;font-weight:900;letter-spacing:-.03em}
+.plan .what{font-weight:700;font-size:1.1rem}
+.plan .detail{color:var(--on-ink-soft);font-size:.95rem}
+.plan .go{margin-top:12px;display:flex;justify-content:center;align-items:center;min-height:50px;border-radius:999px;background:var(--red);color:var(--on-red);font-weight:700;transition:background .12s}
+a.plan:hover .go{background:var(--red-dark)}
+a.plan:active .go{transform:scale(.97)}
+.fine{color:var(--on-ink-soft);font-size:.95rem;max-width:46ch}
 
-/* footer */
-footer{background:var(--kraft-dark);color:#f6ead9;padding-block:36px calc(36px + env(safe-area-inset-bottom,0px));font-size:.92rem}
+footer{border-top:1px solid var(--line);padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));font-size:.92rem;color:var(--muted)}
 footer .wrap{display:grid;gap:12px}
-footer p{margin:0;max-width:60ch}
-footer a{color:#fff}
-footer .links{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer p{max-width:62ch}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px}
 
 @media (min-width:860px){
-  .hero{grid-template-columns:minmax(0,1fr) minmax(0,30rem);gap:56px;padding-block:44px 64px}
-  .hero-copy{padding-top:24px;display:grid;gap:24px}
-  .hero .sheet{padding:34px 26px 26px;transform:rotate(.6deg)}
+  .redtop{background:var(--red)}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,28rem);gap:56px;padding-block:48px 64px;align-items:center}
   .plans{grid-template-columns:1fr 1fr}
-  .sold-wrap{grid-template-columns:minmax(0,22rem) minmax(0,1fr);gap:48px!important;align-items:start}
-  .sold-wrap .sheet{transform:rotate(-.5deg)}
-  .myths{grid-template-columns:1fr 1fr;gap:30px 48px}
+  .sold-grid{grid-template-columns:minmax(0,22rem) minmax(0,1fr)!important;gap:56px!important;align-items:start}
+  .myths{grid-template-columns:1fr 1fr;gap:28px 56px}
 }
-@media (max-width:859px){.hero-copy{display:grid;gap:14px}}
+@media (max-width:359px){.top nav a[href="#sold"]{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P544XY2T5C"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P544XY2T5C');</script>
 </head>
 <body>
-<header class="wrap top">
-  <a class="brand tape" href="/">Plush Tag Check</a>
-  <nav aria-label="Page"><a href="#sold">Prices</a><a href="#offer">Get a report</a></nav>
-</header>
+<div class="redtop">
+  <header class="wrap top">
+    <a class="brand" href="/"><svg viewBox="0 0 120 100" aria-hidden="true"><path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92 C76 72 106 56 104 32 C102 6 72 4 60 22Z" fill="#ffffff"/></svg>Plush Tag Check</a>
+    <nav aria-label="Page"><a href="#sold">Prices</a><a href="#offer">Get a report</a></nav>
+  </header>
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <h1>Is your old plush worth money?</h1>
+      <p class="promise">Tap what you see on the heart tag. <strong>Free, no sign-up.</strong></p>
+    </div>
+    <div class="card">
+      <div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="quiz" id="quiz" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
 
 <main>
-<div class="wrap hero">
-  <div class="hero-copy">
-    <h1>Garage sale, or eBay?</h1>
-    <p class="promise">Tap what's on its heart tag. <strong>Free, no sign-up.</strong></p>
-  </div>
-  <div class="sheet">
-    <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    <div class="quiz" id="quiz" aria-live="polite"></div>
-  </div>
-</div>
-
 <div class="wrap honest">
-  <p class="tape"><strong>The honest part first:</strong> most Beanie Babies sell for a few dollars. Even the famous Princess bear usually sells for about $10. The real money is in a small number of early tags and specific versions, and this check tells you whether yours might be one.</p>
+  <p class="note"><strong>The honest part first:</strong> most Beanie Babies sell for a few dollars. Even the famous Princess bear usually sells for about $10. The real money is in a small number of early tags and specific versions, and this check tells you whether yours might be one.</p>
 </div>
 
-<section class="band" id="sold">
-  <div class="wrap sold-wrap">
-    <div class="intro">
-      <h2>Sold, not asking</h2>
+<section id="sold">
+  <div class="wrap sold-grid">
+    <div style="display:grid;gap:14px;align-content:start">
+      <h2 class="big">Sold, not asking</h2>
       <p class="sub">The famous ones and what they really sold for on eBay, October 2023 to October 2026. Only the best examples reach the top of these ranges.</p>
       <p class="source">Source: <a href="https://millennialdaydreams.com/blogs/explore/most-valuable-beanie-babies">Millennial Daydreams' sold-price study</a></p>
     </div>
-    <div class="sheet">
-      <ul class="sold">
-        <li><span class="name">Princess, the purple bear</span><span class="why">Almost all are common. Some early versions earn a modest premium.</span><span class="price">~$10<small>usually; best $850</small></span></li>
-        <li><span class="name">Peanut, royal blue</span><span class="why">The dark royal-blue colour, not the common light blue. Must be authenticated.</span><span class="price">$1,225–2,400<small>2026, mint</small></span></li>
-        <li><span class="name">Flash the dolphin</span><span class="why">Original 1st-generation tags.</span><span class="price">$450–600<small>top $2,900</small></span></li>
-        <li><span class="name">Brownie the bear</span><span class="why">1st-generation tag naming "Brownie".</span><span class="price">$680–1,750<small>sold range</small></span></li>
-      </ul>
-    </div>
+    <ul class="sold">
+      <li><span class="name">Princess, the purple bear</span><span class="why">Almost all are common. Some early versions earn a modest premium.</span><span class="price">~$10<small>usually; best $850</small></span></li>
+      <li><span class="name">Peanut, royal blue</span><span class="why">The dark royal-blue colour, not the common light blue. Must be authenticated.</span><span class="price">$1,225–2,400<small>2026, mint</small></span></li>
+      <li><span class="name">Flash the dolphin</span><span class="why">Original 1st-generation tags.</span><span class="price">$450–600<small>top $2,900</small></span></li>
+      <li><span class="name">Brownie the bear</span><span class="why">1st-generation tag naming "Brownie".</span><span class="price">$680–1,750<small>sold range</small></span></li>
+    </ul>
   </div>
 </section>
 
-<section class="band">
+<section style="padding-top:12px">
   <div class="wrap">
-    <h2>Doesn't make it valuable</h2>
+    <h2 class="big">Doesn't make it valuable</h2>
     <ul class="myths">
       <li><span class="myth">"1993" on the sewn tag</span><p>That's the design's copyright date, not when your toy was made.</p></li>
       <li><span class="myth">Spelling mistakes</span><p>Errors in the poem or tag from the late 1990s usually sell for the same few dollars.</p></li>
@@ -217,22 +188,22 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px}
   </div>
 </section>
 
-<section class="band offer" id="offer">
+<section class="offer" id="offer">
   <div class="wrap">
-    <h2>Want a real number for yours?</h2>
-    <p class="sub" style="color:var(--ink)">Send photos of the toy and both tags. Within 48 hours, a person looks up recent sold prices for your exact version (tag generation, condition), then tells you whether it's worth selling and where to sell it.</p>
+    <h2 class="big">Want a real number for yours?</h2>
+    <p class="sub">Send photos of the toy and both tags. Within 48 hours, a person looks up recent sold prices for your exact version (tag generation, condition), then tells you whether it's worth selling and where to sell it.</p>
     <div class="plans">
       <a class="plan" href="https://buy.stripe.com/8x28wP2u7bs8dHD29jdAk00">
-        <span class="dot" aria-hidden="true">$9</span>
+        <span class="amt">$9</span>
         <span class="what">One toy</span>
         <span class="detail">A sold-price report by email.</span>
-        <span class="go">Buy one report for $9</span>
+        <span class="go">Buy one report</span>
       </a>
       <a class="plan" href="https://buy.stripe.com/fZu7sL9WzeEk7jf15fdAk01">
-        <span class="dot" aria-hidden="true">$19</span>
-        <span class="what">A box of up to 25</span>
+        <span class="amt">$19</span>
+        <span class="what">Up to 25 toys</span>
         <span class="detail">For clearing out a collection: which ones to sell, which to donate.</span>
-        <span class="go">Buy a box report for $19</span>
+        <span class="go">Buy a box report</span>
       </a>
     </div>
     <p class="fine">Secure checkout by Stripe. After paying you'll see how to send your photos. Full refund if we can't find comparable sales.</p>
@@ -251,13 +222,13 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px}
 <script>
 // Schematic tag drawings (our own, not Ty artwork)
 const heart = (o={}) => `<svg viewBox="0 0 120 100" aria-hidden="true">
-  ${o.book?'<path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92" fill="none" stroke="#8a7560" stroke-width="2" stroke-dasharray="4 3" transform="translate(-6,4)"/>':''}
+  ${o.book?'<path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92" fill="none" stroke="#9a9a9a" stroke-width="2" stroke-dasharray="4 3" transform="translate(-6,4)"/>':''}
   <path d="M60 22 C48 4 18 6 16 32 C14 56 44 72 60 92 C76 72 106 56 104 32 C102 6 72 4 60 22Z" fill="#d42a3c"/>
   ${o.letters==='thin'?'<text x="60" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="400" fill="#fff" stroke="#fff" stroke-width=".3">Aa</text>':''}
   ${o.letters==='puffy'?'<text x="60" y="58" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-size="26" font-weight="900" fill="#fff">Aa</text>':''}
   ${o.star?'<path d="M92 62 l5 10 11 1 -8 7 3 11 -11 -6 -11 6 3 -11 -8 -7 11 -1z" fill="#ffd21f" stroke="#8a6a00" stroke-width="1"/>':''}
   ${o.holo?'<g><circle cx="94" cy="76" r="11" fill="url(#hg)"/><defs><linearGradient id="hg"><stop offset="0" stop-color="#cfd8e3"/><stop offset=".5" stop-color="#f6e2ff"/><stop offset="1" stop-color="#bfe8ff"/></linearGradient></defs></g>':''}
-  ${o.none?'<path d="M30 20 L90 80 M90 20 L30 80" stroke="#2b2118" stroke-width="6" stroke-linecap="round"/>':''}
+  ${o.none?'<path d="M30 20 L90 80 M90 20 L30 80" stroke="#111111" stroke-width="6" stroke-linecap="round"/>':''}
 </svg>`;
 
 const Q = {
@@ -289,7 +260,7 @@ const R = {
 };
 
 const box = document.getElementById('quiz');
-const dots = [...document.querySelectorAll('.dots i')];
+const dots = [...document.querySelectorAll('.prog i')];
 let n = 1, trail = [];
 function setDots(k){dots.forEach((d,i)=>d.classList.toggle('on',i<k));}
 function show(id, focus){
@@ -306,11 +277,11 @@ function show(id, focus){
 function result(r){
   setDots(4);
   box.innerHTML = `<div class="result">
-    <div class="res-head"><h2 class="era" tabindex="-1">${r.era}<span class="when">${r.when}</span></h2>
-      <div class="sticker ${r.kind} slap" role="img" aria-label="${r.kind==='check'?'Worth checking':'Garage sale pile'}">${r.kind==='check'?'Check<br>this one!':'Garage<br>sale<br>pile'}</div></div>
+    <div class="res-head"><div class="badge ${r.kind} pop">${r.kind==='check'?'Worth checking':'Garage sale pile'}</div>
+      <h2 class="era" tabindex="-1">${r.era}<span class="when">${r.when}</span></h2></div>
     <ul>${r.why.map(w=>`<li>${w}</li>`).join('')}</ul>
     <p class="next">${r.next}</p>
-    <div class="row"><a class="btn" href="#offer">Get a sold-price report</a><button class="btn plain" type="button" id="again">Check another toy</button></div></div>`;
+    <div class="row"><a class="btn" href="#offer">Get a report</a><button class="btn plain" type="button" id="again">Check another toy</button></div></div>`;
   box.querySelector('.era').focus({preventScroll:true});
   document.getElementById('again').onclick=()=>{n=1;trail=[];show('start',true)};
 }
